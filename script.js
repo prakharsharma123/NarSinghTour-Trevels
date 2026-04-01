@@ -1,4 +1,4 @@
-/* === SIDEBAR === */
+    /* === SIDEBAR === */
     function toggleSidebar() {
       const s = document.getElementById('sidebar'), o = document.getElementById('sidebarOverlay'), b = document.getElementById('menuBtn');
       if (s.classList.contains('open')) { closeSidebar(); }
