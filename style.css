@@ -1,4 +1,4 @@
- :root {
+:root {
       --bg: #FFFBF9;
       /* Soft Warm Peach */
       --surface: #F5FAF9;
@@ -45,6 +45,65 @@
       color: var(--text-primary);
       font-family: 'Outfit', sans-serif;
       overflow-x: hidden;
+      padding-top: 38px; /* Room for fixed announcement bar */
+    }
+
+    /* ========== ANNOUNCEMENT BAR ========== */
+    .announcement-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 38px;
+      background: linear-gradient(90deg, #1A3040 0%, #2a4a5e 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      overflow: hidden;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(150, 199, 179, 0.2);
+    }
+
+    .announcement-track {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+    }
+
+    .announcement-content {
+      padding: 0 50px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .announcement-content span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .announcement-content .offer {
+      color: var(--accent-alt);
+      font-weight: 700;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media(max-width: 600px) {
+      .announcement-bar {
+        height: 34px;
+        font-size: 0.75rem;
+      }
+      body {
+        padding-top: 34px;
+      }
     }
 
     /* ========== LEFT SIDEBAR DRAWER ========== */
@@ -310,7 +369,7 @@
     /* ========== NAV ========== */
     nav {
       position: fixed;
-      top: 0;
+      top: 38px;
       width: 100%;
       padding: 1.1rem 2rem;
       display: flex;
@@ -319,6 +378,12 @@
       z-index: 200;
       background: transparent;
       animation: floatNav 1.2s ease forwards;
+    }
+
+    @media(max-width: 600px) {
+      nav {
+        top: 34px;
+      }
     }
 
     @keyframes floatNav {
